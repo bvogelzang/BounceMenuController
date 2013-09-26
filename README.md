@@ -1,10 +1,10 @@
 ## BounceMenuController
 
-BounceMenuController is a tab bar controller-esque navigation solution for iOS. Inspired by [Creativedash](http://dribbble.com/shots/1248375-Bounce-Menu-CSS). An elegant and minimal alternative to UITabBarController.
-
-Contributions are welcomed. Feel free to let me know of any bugs you may experience as this has not been used in a production setting. Pull requests are the preferred way to contribute.
+BounceMenuController is a tab bar controller-esque navigation solution for iOS inspired by [Creativedash](http://dribbble.com/shots/1248375-Bounce-Menu-CSS). An elegant and minimal alternative to UITabBarController.
 
 ![Animation](https://raw.github.com/bvogelzang/BounceMenuController/master/example.gif)
+
+Contributions are welcomed. Feel free to let me know of any bugs you may experience as this has not been used in a production setting. Pull requests are the preferred way to contribute.
 
 ## Usage
 
