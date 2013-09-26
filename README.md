@@ -8,6 +8,15 @@ Contributions are welcomed. Feel free to let me know of any bugs you may experie
 
 ## Usage
 
+**Installation with CocoaPods**
+
+```objective-c
+platform :ios, '7.0'
+pod 'BounceMenuController', '~> 0.0.1'
+```
+
+**Otherwise**
+
 Add `BounceMenuController.h`, `BouceMenuController.m`, `PlusButton.h`, and `PlusButton.m` files to your project and add the QuartzCore framework to your project.
 
 **Initializing and using the BounceMenuController**
