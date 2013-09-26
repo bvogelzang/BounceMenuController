@@ -4,7 +4,7 @@ BounceMenuController is a tab bar controller-esque navigation solution for iOS i
 
 ![Animation](https://raw.github.com/bvogelzang/BounceMenuController/master/example.gif)
 
-Contributions are welcomed. Feel free to let me know of any bugs you may experience as this has not been used in a production setting. Pull requests are the preferred way to contribute.
+Since this project is far from perfect contributions are always welcomed. Feel free to let me know of any bugs you may experience as this has not been used in a production setting. Pull requests are the preferred way to contribute.
 
 ## Usage
 
