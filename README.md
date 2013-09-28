@@ -21,7 +21,7 @@ Add `BounceMenuController.h`, `BouceMenuController.m`, `PlusButton.h`, and `Plus
 
 #### Code Examples
 
-**Initializing and using the BounceMenuController**
+Initializing and using the BounceMenuController
 
 ```objective-c
 BounceMenuController *bounceMenuController = [[BounceMenuController alloc] init];
@@ -37,13 +37,13 @@ NSArray *controllers = [NSArray arrayWithObjects:vc1, vc2, vc3, nil];
 bounceMenuController.viewControllers = controllers;
 ```
 
-**Any view controller used with BounceMenuController must have its UITabBarItem image set. The image(s) can also be set in your storyboard file.**
+Any view controller used with BounceMenuController must have its UITabBarItem image set. The image(s) can also be set in your storyboard file.
 
 ```objective-c
 viewController.tabBarItem.image = [UIImage imageNamed:@"tabBarImage.png"];
 ```
 
-**You can also customize the background and menu button colors**
+You can also customize the background and menu button colors
 
 ```objective-c
 bounceMenuController.backgroundColor = [UIColor blackColor]
@@ -54,7 +54,7 @@ bounceMenuController.menuButtonColor = [UIColor lightGrayColor];
 
 1. When the device is rotated, tabs that have already been accessed will jump into position when selected instead of properly animating.
 2. If there are more tabs than vertical space allows (in landscape or otherwise), those tabs cannot be accessed.
-3. A delegate property should be added so a delegate can be notified of when a view controller is selected.
+~~3. A delegate property should be added so a delegate can be notified of when a view controller is selected.~~
 
 ## Requirements
 
