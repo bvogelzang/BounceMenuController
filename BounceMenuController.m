@@ -31,6 +31,8 @@
 @synthesize selectedViewController = _selectedViewController;
 @synthesize selectedIndex = _selectedIndex;
 
+@synthesize delegate;
+
 @synthesize backgroundColor = _backgroundColor;
 @synthesize menuButtonColor = _menuButtonColor;
 
@@ -40,6 +42,7 @@
 @synthesize contentTap = _contentTap;
 @synthesize isOpen = _isOpen;
 @synthesize isAnimating = _isAnimating;
+
 
 
 - (id)init
@@ -134,6 +137,14 @@
 
 - (void)controllerSelected:(UIButton *)button {
 
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(bouncMenuController:shouldSelectViewController:)]) {
+        BOOL shouldSelect = [self.delegate bouncMenuController:self shouldSelectViewController:self.selectedViewController];
+        if (!shouldSelect) {
+            [self closeMenu];
+            return;
+        }
+    }
+    
     if (button.tag != self.selectedIndex) {
         _selectedViewController = [self.viewControllers objectAtIndex:button.tag];
         _selectedIndex = button.tag;
@@ -142,6 +153,10 @@
         [self.view insertSubview:self.selectedViewController.view belowSubview:self.menuButton];
         [self.contentView removeFromSuperview];
         self.contentView = self.selectedViewController.view;
+        
+        if (self.delegate != nil && [self.delegate respondsToSelector:@selector(bouncMenuController:didSelectViewController:)]) {
+            [self.delegate bouncMenuController:self didSelectViewController:self.selectedViewController];
+        }
     }
     
     [self closeMenu];
