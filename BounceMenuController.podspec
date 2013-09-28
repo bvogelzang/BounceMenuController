@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BounceMenuController"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary      = "A tab bar controller-esque navigation solution for iOS."
   s.homepage     = "https://github.com/bvogelzang/BounceMenuController"
   s.screenshots  = "https://raw.github.com/bvogelzang/BounceMenuController/master/example.gif"

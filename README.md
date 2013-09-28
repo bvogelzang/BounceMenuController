@@ -12,7 +12,7 @@ Since this project is far from perfect contributions are always welcomed. Feel f
 
 ```objective-c
 platform :ios, "7.0"
-pod "BounceMenuController", "~> 0.0.1"
+pod "BounceMenuController", "~> 0.1.0"
 ```
 
 #### Without CocoaPods
