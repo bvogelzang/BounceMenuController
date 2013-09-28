@@ -54,7 +54,6 @@ bounceMenuController.menuButtonColor = [UIColor lightGrayColor];
 
 1. When the device is rotated, tabs that have already been accessed will jump into position when selected instead of properly animating.
 2. If there are more tabs than vertical space allows (in landscape or otherwise), those tabs cannot be accessed.
-~~3. A delegate property should be added so a delegate can be notified of when a view controller is selected.~~
 
 ## Requirements
 
