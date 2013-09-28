@@ -73,7 +73,10 @@
 
 - (void)viewWillLayoutSubviews {
     self.menuButton.frame = CGRectMake(15, self.view.bounds.size.height - 45, self.menuButton.frame.size.width, self.menuButton.frame.size.height);
-    self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.view.bounds.size.width, self.view.bounds.size.height);
+    
+    for (UIViewController *viewController in self.viewControllers) {
+        viewController.view.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.view.bounds.size.width, self.view.bounds.size.height);
+    }
     
     CGFloat buttonStartY = self.view.bounds.size.height - 100;
     for (int i = 0; i < self.buttons.count; i++) {
@@ -81,6 +84,16 @@
         CGFloat buttonY = buttonStartY - (i * 50);
         button.frame = CGRectMake(15, buttonY, 30, 30);
     }
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self.selectedViewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self.selectedViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 }
 
 - (void)didReceiveMemoryWarning
