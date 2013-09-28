@@ -173,13 +173,13 @@
         UIButton *controllerButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [controllerButton setImage:viewController.tabBarItem.image forState:UIControlStateNormal];
         controllerButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        controllerButton.adjustsImageWhenHighlighted = YES;
+        controllerButton.adjustsImageWhenHighlighted = NO;
         controllerButton.layer.opacity = 0.0;
         controllerButton.tag = i;
         
         // show which view controller is currently selected
         if (i == self.selectedIndex) {
-            [controllerButton setHighlighted:YES];
+            [controllerButton setEnabled:NO];
         }
         
         // find offset from center of buttons
