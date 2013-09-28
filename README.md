@@ -52,8 +52,7 @@ bounceMenuController.menuButtonColor = [UIColor lightGrayColor];
 
 ## Known Issues
 
-1. When the device is rotated, tabs that have already been accessed will jump into position when selected instead of properly animating.
-2. If there are more tabs than vertical space allows (in landscape or otherwise), those tabs cannot be accessed.
+1. If there are more tabs than vertical space allows (in landscape or otherwise), those tabs cannot be accessed.
 
 ## Requirements
 
