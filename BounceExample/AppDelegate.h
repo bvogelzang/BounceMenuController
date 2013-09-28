@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BounceMenuController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, BounceMenuControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

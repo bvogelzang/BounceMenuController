@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "BounceMenuController.h"
 
 @implementation AppDelegate
 
@@ -16,16 +15,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     BounceMenuController *bounceMenuController = [[BounceMenuController alloc] init];
-    
-    // load view controllers from a storyboard
-//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"StoryboardiPhone" bundle:nil];
-//    UIViewController *vc1 = [sb instantiateViewControllerWithIdentifier:@"ViewController1"];
-//    UIViewController *vc2 = [sb instantiateViewControllerWithIdentifier:@"ViewController2"];
-//    UIViewController *vc3 = [sb instantiateViewControllerWithIdentifier:@"ViewController3"];
-    
-    
 
-    // optionally create view controllers from code
+    // create view controllers from code
     UIViewController* vc1 = [[UIViewController alloc] init];
     vc1.view.backgroundColor = [UIColor colorWithRed:0.21f green:0.33f blue:0.53f alpha:1.00f];
     vc1.tabBarItem.image = [UIImage imageNamed:@"location.png"];
@@ -38,10 +29,18 @@
     vc3.view.backgroundColor = [UIColor colorWithRed:0.14f green:0.50f blue:0.45f alpha:1.00f];
     vc3.tabBarItem.image = [UIImage imageNamed:@"bolt.png"];
 
+/*
+    // optionally load view controllers from a storyboard
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"StoryboardiPhone" bundle:nil];
+    UIViewController *vc1 = [sb instantiateViewControllerWithIdentifier:@"ViewController1"];
+    UIViewController *vc2 = [sb instantiateViewControllerWithIdentifier:@"ViewController2"];
+    UIViewController *vc3 = [sb instantiateViewControllerWithIdentifier:@"ViewController3"];
+*/
     
     // set the view controllers for the bounc menu
     NSArray* controllers = [NSArray arrayWithObjects:vc1, vc2, vc3, nil];
     bounceMenuController.viewControllers = controllers;
+    bounceMenuController.delegate = self;
     
     self.window.rootViewController = bounceMenuController;
     
@@ -75,6 +74,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)bouncMenuController:(BounceMenuController *)controller shouldSelectViewController:(UIViewController *)viewController {
+    return YES;
+}
+
+- (void)bouncMenuController:(BounceMenuController *)controller didSelectViewController:(UIViewController *)viewController {
+    NSLog(@"selected view controller: %@", viewController);
 }
 
 @end
